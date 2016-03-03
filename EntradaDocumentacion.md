@@ -39,3 +39,28 @@ Esta funcion de trasferencia determina el comportamiento del filtro  donde Wc, c
 Por que el resultado de esta tendremos el  ANALISIS ESPECTRAL de nuestro uadio (figura 2, carpeta: Entrada(modificada))
 
 Con la ayuda del programa Sound Forge 9,1 podemos encontrar el tamaño en la que crece y decrese la onda analizada por lo que tenemos los valores de un simple "hola" para poder aplicar la normalizacion
+
+
+### Preprocesamiento
+
+El objetivo de esta etapa es acondicionar la señal de entrada para que esta pueda ser
+procesada por la RNA, primero acotamos la señal de voz eliminando la parte incial y
+final de la misma, que solo representan ruido para obtener la señal de voz filtrada y
+con respecto a la original. Posteriormente se normaliza la señal de voz resultante,
+para finalmente extraer los coeficientes de la señal, que serviran para el diseño de
+los patrones de entrenamietno de la RNA
+
+### Acotamiento de la señal
+
+En esta etapa se eliminan las muestras de tiempo que sólo contienen silencios diferentes
+a las características acústicas de cada hablante, por lo general estas se encuentran al
+principio y al final de los archivos de audio.
+
+### Normalizacion
+
+La normalizacion consiste en ajustar todos los parámetros a una sola escala (figura 3, carpeta: Entrada(Modificada)) para que al
+momento de ser utilizados por la RNA no causen problemas de estabilidad, en este caso
+la escala empleada se encuentra dada por los parámetris de la función de activacion de
+la RNA que una tangente bipolar sigmoidal y trabaja con valores de [-1,1]
+
+Teniendo como resultado ya el audio Normalizado (audio: "hola (Modificado)" audios aplicando la Normalizacion).
