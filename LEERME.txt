@@ -1,0 +1,11 @@
+
+Descarga el código que ya esta en este Repositorio 
+
+(este esta escrito en Matlab 2009a es necesario que trabajes con el mismo
+ pues hay extensiones que pueden dejar de funcionar) 
+
+Entra a la carpeta "normalizacion de la Señal recibida"
+y busca el archivo INICIO.M
+entra a INICIO.M y ejecuta el programa
+
+// Aun esta en proceso de elaboracion por lo que pueden existir algunos fallos 
