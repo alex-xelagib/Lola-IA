@@ -92,7 +92,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % aparecen etiquetas 
 set (handles.text4,'Visible','off');
 set (handles.text5,'Visible','off');
-set (handles.text1,'Visible','on');
+set (handles.text6,'Visible','on');
 set (handles.edit1,'Visible','on');
 set (handles.pushbutton4,'enable','on');
 set (handles.pushbutton4,'Visible','on');
