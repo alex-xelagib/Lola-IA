@@ -1,3 +1,5 @@
+
+
 function varargout = lola(varargin)
 % LOLA M-file for lola.fig
 %      LOLA, by itself, creates a new LOLA or raises the existing
@@ -77,6 +79,9 @@ close lola2;
 % Get default command line output from handles structure
 varargout{2} = handles.output;
 
+function lol ()
+
+
 
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
@@ -93,7 +98,9 @@ set (handles.pushbutton4,'enable','on');
 set (handles.pushbutton4,'Visible','on');
 
 % INICIA EL VERDADERO PROGRAMA 
-clear all;                                  %Limpiar
+%clear all;                                  %Limpiar
+%set(handles.pushbutton1,'string','runb','enable','off');
+h= msgbox('Grabando');
 %set(handles.pushbutton1,'String', 'Grabando');
 fs=8000;                                    %8000 muestras por segundo Hz
 duracion = 2;                               %t segundos
@@ -163,7 +170,8 @@ PX=x2(Id1:Id11);
 
 %Señal acotada%
 xiyf=x(Id1:Id11);
-
+set (handles.text1,'Visible','off');
+delete(h);
 wavwrite(xiyf,8000,'abrirA1.wav');
 
 sound(y,fs);

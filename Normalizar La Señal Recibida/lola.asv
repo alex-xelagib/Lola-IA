@@ -1,3 +1,5 @@
+
+
 function varargout = lola(varargin)
 % LOLA M-file for lola.fig
 %      LOLA, by itself, creates a new LOLA or raises the existing
@@ -22,7 +24,7 @@ function varargout = lola(varargin)
 
 % Edit the above text to modify the response to help lola
 
-% Last Modified by GUIDE v2.5 23-Mar-2016 23:25:36
+% Last Modified by GUIDE v2.5 23-Mar-2016 23:31:31
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -51,7 +53,7 @@ function lola_OpeningFcn(hObject, eventdata, handles, varargin)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to lola (see VARARGIN)
-i=imread('fondo2.jpg');
+i=imread('fondo3.jpg');
 image(i)
 axis off
 
@@ -77,21 +79,7 @@ close lola2;
 % Get default command line output from handles structure
 varargout{2} = handles.output;
 
-
-% --- Executes on button press in pushbutton1.
-function pushbutton1_Callback(hObject, eventdata, handles)
-
-% hObject    handle to pushbutton1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-% aparecen etiquetas 
-set (handles.text1,'Visible','on');
-set (handles.edit1,'Visible','on');
-aprobado = 1;
-
-% INICIA EL VERDADERO PROGRAMA 
-clear all;                                  %Limpiar
-%set(handles.pushbutton1,'String', 'Grabando');
+function lol ()
 fs=8000;                                    %8000 muestras por segundo Hz
 duracion = 2;                               %t segundos
 
@@ -168,6 +156,29 @@ subplot(2,1,1);plot(x);
 subplot(2,1,2);plot(PX);
 
 
+% --- Executes on button press in pushbutton1.
+function pushbutton1_Callback(hObject, eventdata, handles)
+
+% hObject    handle to pushbutton1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% aparecen etiquetas 
+set (handles.text4,'Visible','off');
+set (handles.text5,'Visible','off');
+set (handles.text1,'Visible','on');
+set (handles.edit1,'Visible','on');
+set (handles.pushbutton4,'enable','on');
+set (handles.pushbutton4,'Visible','on');
+
+% INICIA EL VERDADERO PROGRAMA 
+%clear all;                                  %Limpiar
+%set(handles.pushbutton1,'string','runb','enable','off');
+msgbox(+);
+set(handles.pushbutton1,'String', 'Grabando');
+set(handles.text1,'String', 'Grabando');
+lol();
+
+
 
 function edit1_Callback(hObject, eventdata, handles)
 % hObject    handle to edit1 (see GCBO)
@@ -217,6 +228,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+close lola;
 lola2;
 
 
@@ -232,5 +244,12 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % --- Otherwise, executes on mouse press in 5 pixel border or over pushbutton3.
 function pushbutton3_ButtonDownFcn(hObject, eventdata, handles)
 % hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton4.
+function pushbutton4_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
