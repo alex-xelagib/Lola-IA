@@ -171,7 +171,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % REPRODUCIR AUDIO grabado
-a= wavread('introlola.wav');
+a= wavread('intro1.wav');
 wavplay(a,44000);
 
 
@@ -183,3 +183,6 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+a= wavread('intro2.wav');
+wavplay(a,44000);
+
