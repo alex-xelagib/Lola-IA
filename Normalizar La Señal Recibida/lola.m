@@ -1,32 +1,6 @@
-
-
 function varargout = lola(varargin)
 % LOLA M-file for lola.fig
-%      LOLA, by itself, creates a new LOLA or raises the existing
-%      singleton*.
-%
-%      H = LOLA returns the handle to a new LOLA or the handle to
-%      the existing singleton*.
-%
-%      LOLA('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in LOLA.M with the given input arguments.
-%
-%      LOLA('Property','Value',...) creates a new LOLA or raises the
-%      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before lola_OpeningFcn gets called.  An
-%      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to lola_OpeningFcn via varargin.
-%
-%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
-%      instance to run (singleton)".
-%
-% See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help lola
-
-% Last Modified by GUIDE v2.5 23-Mar-2016 23:31:31
-
-% Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
@@ -79,9 +53,6 @@ close lola2;
 % Get default command line output from handles structure
 varargout{2} = handles.output;
 
-function lol ()
-
-
 
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
@@ -92,15 +63,13 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % aparecen etiquetas 
 set (handles.text4,'Visible','off');
 set (handles.text5,'Visible','off');
-set (handles.text6,'Visible','on');
-set (handles.edit1,'Visible','on');
 set (handles.pushbutton4,'enable','on');
 set (handles.pushbutton4,'Visible','on');
 
 % INICIA EL VERDADERO PROGRAMA 
 %clear all;                                  %Limpiar
 %set(handles.pushbutton1,'string','runb','enable','off');
-h= msgbox('Grabando');
+h= msgbox('Escuchando...');
 %set(handles.pushbutton1,'String', 'Grabando');
 fs=8000;                                    %8000 muestras por segundo Hz
 duracion = 2;                               %t segundos
@@ -173,20 +142,11 @@ xiyf=x(Id1:Id11);
 set (handles.text1,'Visible','off');
 delete(h);
 wavwrite(xiyf,8000,'abrirA1.wav');
-
 sound(y,fs);
+set (handles.text6,'Visible','on');
+set (handles.edit1,'Visible','on');
 subplot(2,1,1);plot(x);
 subplot(2,1,2);plot(PX);
-
-
-
-function edit1_Callback(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edit1 as text
-%        str2double(get(hObject,'String')) returns contents of edit1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
@@ -202,27 +162,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-
-% --- If Enable == 'on', executes on mouse press in 5 pixel border.
-% --- Otherwise, executes on mouse press in 5 pixel border or over pushbutton1.
-function pushbutton1_ButtonDownFcn(hObject, eventdata, handles)
-
-% hObject    handle to pushbutton1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-
-% --- Executes on key press with focus on pushbutton1 and none of its controls.
-function pushbutton1_KeyPressFcn(hObject, eventdata, handles)
-
-% hObject    handle to pushbutton1 (see GCBO)
-% eventdata  structure with the following fields (see UICONTROL)
-%	Key: name of the key that was pressed, in lower case
-%	Character: character interpretation of the key(s) that was pressed
-%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
-% handles    structure with handles and user data (see GUIDATA)
-
-
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
@@ -232,24 +171,10 @@ close lola;
 lola2;
 
 
-
-% --- Executes on button press in pushbutton3.
-function pushbutton3_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-
-% --- If Enable == 'on', executes on mouse press in 5 pixel border.
-% --- Otherwise, executes on mouse press in 5 pixel border or over pushbutton3.
-function pushbutton3_ButtonDownFcn(hObject, eventdata, handles)
-% hObject    handle to pushbutton3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-
 % --- Executes on button press in pushbutton4.
 function pushbutton4_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+a= wavread('Ralex.wav');
+wavplay(a,44000);
