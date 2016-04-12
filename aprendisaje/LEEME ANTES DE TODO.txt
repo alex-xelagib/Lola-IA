@@ -1,0 +1,28 @@
+antes de probar esta red neuronal 
+debes de saber que por alguna explicacion 
+se reinicia el RNA despues de 5 veses corriendo el programa 
+(a veses menos de 5)
+
+actualmente se encuentra en un entrenamiento optimo
+por lo que si lo vuelves a probar lo mas seguro
+es que se vuelva a reiniciar
+
+Para conocer los pesos optimos debes de ingresar
+a los documentos:
+
+Vij.bat
+Wij.bat   
+
+
+Aca te aparece los pesos para ya usar el programa LOLA
+
+Si aun asi lo quieres probar debes de saber:
+
+1.- Si la RNA no llega al Error minimo la neurona 
+debe de parar despues de 100,000 interaciones 
+(para que no se quede en un ciclo sin fin)
+
+2.- Entre mas veses la entrenes (de recomendacion menos de
+tres veses) menos seran las interaciones 
+
+3.- Si llegas a un error 0.000499 ese es el error optimo encontrado

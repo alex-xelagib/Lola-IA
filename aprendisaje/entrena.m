@@ -69,7 +69,18 @@ pa2;pb2;
 pa3;pb3;
 pa4;pb4;
 pa5;pb5];
+
 % Salida deseada de cada uno %
+
+% 1 -1 -1  reconoce alex
+% -1 1 -1 reconoce juancho
+% -1 -1 1 no reconoce nada 
+
+% el ciclo se repite 5 veses puesto que son 5 audios grabados con distinta
+% tonalidad por lo que graba cada una
+% por cada grabacion se realizo 3 analisis 
+% 3 * 5 = 15 salidas 
+
 D=[ 1 -1 -1;
 -1 1 -1;
 -1 -1 1;
