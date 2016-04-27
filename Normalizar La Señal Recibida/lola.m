@@ -148,6 +148,51 @@ set (handles.edit1,'Visible','on');
 subplot(2,1,1);plot(x);
 subplot(2,1,2);plot(PX);
 
+%--------NUEVO CODIGO --------
+N=10;
+c1=xiyf;
+[lpcc1,ga2]=lpc(c1,N);
+t=2:11;
+c11=(abs(lpcc1(:,t)));
+
+N=11; %neuronas de entrada (incluido el BIAS)
+L=7; %neuronas de la capa oculta (incluido el BIAS)
+M=3; %neuronas de salida
+NT=1; %patrones de entrenamiento
+epsilon=0.005; %error cuadrático medio requerido
+
+% llamando archivos de entrenamiento 
+PE=[c11];
+fidfun=fopen('Wij.dat','r');
+Ws=fscanf(fidfun,'%f',[L-1,inf]);
+Ws=Ws';
+fclose(fidfun);
+fidfun=fopen('Vij.dat','r');
+Vs=fscanf(fidfun,'%f',[M,inf]);
+Vs=Vs';
+fclose(fidfun);
+for i=1:1
+X=[1.0,PE(i,:)];
+U_hat=X*Ws;
+U=[1.0,f_nl(1,U_hat)];
+Y_hat=U*Vs;
+Y=hardlims(f_nl(1,Y_hat));
+fprintf(1,'Salida de la Red: %d %d %d \n\n',Y(1),Y(2),Y(3));
+end
+
+% Respuestas a la evaluación %
+if (Y~=[1 -1 -1])|(Y~=[-1 1 -1]);
+fprintf('error acceso denegado'); % abrir ventana lola-error %
+end
+if (Y==[1 -1 -1]);
+fprintf('abrir persona AAAA'); % abrir ventana lola-alex %
+end
+if (Y==[-1 1 -1]);
+fprintfln('abrir persona B'); % abrir ventana lola-juan %
+end
+
+
+
 
 % --- Executes during object creation, after setting all properties.
 function edit1_CreateFcn(hObject, eventdata, handles)
