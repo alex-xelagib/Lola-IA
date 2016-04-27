@@ -22,7 +22,7 @@ function varargout = lola2(varargin)
 
 % Edit the above text to modify the response to help lola2
 
-% Last Modified by GUIDE v2.5 22-Mar-2016 16:05:16
+% Last Modified by GUIDE v2.5 26-Apr-2016 23:59:28
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -185,4 +185,3 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 a= wavread('intro2.wav');
 wavplay(a,44000);
-

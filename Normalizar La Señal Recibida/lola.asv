@@ -64,7 +64,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 set (handles.text4,'Visible','off');
 set (handles.text5,'Visible','off');
 set (handles.pushbutton4,'enable','on');
-set (handles.pushbutton4,'Visible','on');
+%set (handles.pushbutton4,'Visible','on');
 
 % INICIA EL VERDADERO PROGRAMA 
 %clear all;                                  %Limpiar
@@ -182,13 +182,16 @@ end
 
 % Respuestas a la evaluación %
 if (Y~=[1 -1 -1])|(Y~=[-1 1 -1]);
-fprintf('error acceso denegado');
+    fprintf('error acceso denegado'); % abrir ventana lola-error %
 end
 if (Y==[1 -1 -1]);
-fprintf('abrir persona A');
+    fprintf('abrir persona AAAA'); % abrir ventana lolaalex %
+    %pause(0.5);
+    lolaAlex;
 end
 if (Y==[-1 1 -1]);
-fprintf('abrir persona B');
+    fprintfln('abrir persona BBBB'); % abrir ventana lolaJuan %
+    lolaJuan;
 end
 
 
